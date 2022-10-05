@@ -15,6 +15,10 @@ blocks:
             - go get
             - go build -o ./bin/main
             - cache store $(checksum main.go) bin
+            - echo $HEROKU_APP_NAME_2
+            - cat ~/test2.txt
+      secrets:
+        - name: heroku-http
     dependencies: []
   - name: Check code style
     task:
@@ -25,10 +29,6 @@ blocks:
             - sem-version go 1.16
             - sudo apt install -y gccgo-go
             - gofmt main.go | diff --ignore-tab-expansion main.go -
-            - echo $HEROKU_APP_NAME_2
-            - cat ~/test2.txt
-      secrets:
-        - name: heroku-http
     dependencies:
       - Build project
   - name: Run tests
