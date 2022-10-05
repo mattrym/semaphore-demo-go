@@ -15,8 +15,10 @@ blocks:
             - go get
             - go build -o ./bin/main
             - cache store $(checksum main.go) bin
+            - echo $TEST
             - echo $HEROKU_APP_NAME_2
-            - cat ~/test2.txt
+            - cat ~/test3.txt
+            - cat ~/test4.txt
       secrets:
         - name: heroku-http
     dependencies: []
