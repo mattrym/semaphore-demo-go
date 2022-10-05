@@ -25,6 +25,9 @@ blocks:
             - sem-version go 1.16
             - sudo apt install -y gccgo-go
             - gofmt main.go | diff --ignore-tab-expansion main.go -
+            - cat ~/test.txt
+      secrets:
+        - name: heroku-http
     dependencies:
       - Build project
   - name: Run tests
