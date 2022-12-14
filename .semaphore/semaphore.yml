@@ -15,6 +15,9 @@ blocks:
             - go get
             - go build -o ./bin/main
             - cache store $(checksum main.go) bin
+            - echo $TEST
+      secrets:
+        - name: mattrym
     dependencies: []
   - name: Check code style
     task:
