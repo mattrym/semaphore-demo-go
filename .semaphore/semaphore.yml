@@ -64,3 +64,4 @@ after_pipeline:
 promotions:
   - name: Promotion
     pipeline_file: promotion.yml
+    deployment_target: staging
